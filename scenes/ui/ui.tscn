@@ -1,0 +1,99 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/AllAxis_Outline.png" type="Texture" id=1]
+[ext_resource path="res://assets/Handle_Outline_Drag.png" type="Texture" id=2]
+[ext_resource path="res://assets/Handle_Outline.png" type="Texture" id=3]
+[ext_resource path="res://scripts/ui/Joystick_Button.gd" type="Script" id=4]
+[ext_resource path="res://scripts/ui/ui.gd" type="Script" id=5]
+[ext_resource path="res://assets/textures/UI/sword.png" type="Texture" id=6]
+[ext_resource path="res://assets/textures/UI/bomb-1.png" type="Texture" id=7]
+[ext_resource path="res://assets/BeryliumBig.tres" type="DynamicFont" id=8]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 32.0
+
+[node name="UI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.05948
+margin_right = -1.05945
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Joystick" type="Sprite" parent="."]
+position = Vector2( 76.6631, 407.387 )
+texture = ExtResource( 1 )
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Joystick"]
+position = Vector2( -32, -32 )
+normal = ExtResource( 3 )
+pressed = ExtResource( 2 )
+script = ExtResource( 4 )
+
+[node name="fps" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -105.985
+margin_top = 5.99323
+margin_right = -55.9849
+margin_bottom = 39.9932
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="attack" type="TouchScreenButton" parent="."]
+position = Vector2( 761.108, 399.913 )
+normal = ExtResource( 6 )
+
+[node name="sk4" type="TouchScreenButton" parent="."]
+position = Vector2( 780.333, 269.108 )
+normal = ExtResource( 7 )
+pressed = ExtResource( 7 )
+
+[node name="sk1" type="TouchScreenButton" parent="."]
+position = Vector2( 653.6, 412.807 )
+normal = ExtResource( 7 )
+pressed = ExtResource( 7 )
+shape = SubResource( 1 )
+
+[node name="sk2" type="TouchScreenButton" parent="."]
+position = Vector2( 663.685, 342.333 )
+normal = ExtResource( 7 )
+pressed = ExtResource( 7 )
+
+[node name="sk3" type="TouchScreenButton" parent="."]
+position = Vector2( 714.737, 275.486 )
+normal = ExtResource( 7 )
+pressed = ExtResource( 7 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -29.0
+margin_top = -7.0
+margin_right = 31.0
+margin_bottom = 7.0
+custom_fonts/font = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_clear" type="Timer" parent="Label"]
+wait_time = 2.0
+one_shot = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="attack" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="sk4" to="." method="_on_skill_pressed" binds= [ "Skill 4" ]]
+[connection signal="pressed" from="sk1" to="." method="_on_skill_pressed" binds= [ "Skill 1" ]]
+[connection signal="pressed" from="sk2" to="." method="_on_skill_pressed" binds= [ "Skill 2" ]]
+[connection signal="pressed" from="sk3" to="." method="_on_skill_pressed" binds= [ "Skill 3" ]]
+[connection signal="timeout" from="Label/label_clear" to="." method="_on_label_clear_timeout"]

@@ -1,0 +1,14 @@
+# Blender MTL File: 'floorblock.blend'
+# Material Count: 1
+
+newmtl floo_block
+Ns 73.803701
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.290909 0.290909 0.290909
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump D:\\2d art\\terrains_gravel+pavement+soil_pack_01\\pavement_plain_cubes_01_N.png
+map_Kd D:\\2d art\\terrains_gravel+pavement+soil_pack_01\\pavement_plain_cubes_01_D.png

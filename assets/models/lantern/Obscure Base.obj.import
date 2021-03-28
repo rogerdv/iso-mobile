@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Obscure Base.obj-f64954c38365858ce52efe382192100e.mesh"
+
+[deps]
+
+files=[ "res://.import/Obscure Base.obj-f64954c38365858ce52efe382192100e.mesh" ]
+
+source_file="res://assets/models/lantern/Obscure Base.obj"
+dest_files=[ "res://.import/Obscure Base.obj-f64954c38365858ce52efe382192100e.mesh", "res://.import/Obscure Base.obj-f64954c38365858ce52efe382192100e.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/textures/UI/progress_bar_int.png" type="Texture" id=1]
+[ext_resource path="res://scripts/ui/health_bar.gd" type="Script" id=2]
+[ext_resource path="res://scripts/ui/TextureProgress.gd" type="Script" id=3]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+flags_unshaded = true
+params_billboard_mode = 1
+albedo_color = Color( 0.5, 0.0234375, 0.0234375, 1 )
+
+[node name="Sprite3D" type="Sprite3D"]
+transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0 )
+material_override = SubResource( 1 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 128, 16 )
+transparent_bg = true
+usage = 0
+render_target_v_flip = true
+
+[node name="TextureProgress" type="TextureProgress" parent="Viewport"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 3 )
